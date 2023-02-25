@@ -1,0 +1,8 @@
+@use '../components/utils' as u;
+@use '../config/variables' as v;
+
+ @include u.text(u.rem(28), 500, inherit, 33px, v.$primary-font);
+    background: v.$color-white;
+    @include u.media('tablet-wide') {
+        @include u.text(u.rem(40), 500, inherit, 47px, v.$primary-font);
+    }
