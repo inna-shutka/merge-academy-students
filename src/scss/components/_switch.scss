@@ -1,0 +1,65 @@
+@use '../components/utils' as u;
+@use '../config/variables' as v;
+
+.switch {
+    position: relative;
+    cursor: pointer;
+    &__light {
+        fill: v.$color-switch-light-fill;
+        position: absolute;
+        top: -4px;
+        right: 80px;
+    }
+    &__dark {
+        fill: v.$color-switch-dark-fill;
+        position: absolute;
+        top: -4px;
+        right: 0px;
+    }
+    &__button {
+        position: absolute;
+        top: 0px;
+        right: 34px;
+        display: block;
+        width: 34px;
+        height: 16px;
+        background: v.$color-switch;
+        border-radius: 15px;
+    }
+    &__dot {
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: v.$color-white;
+        border-radius: 50%;
+        top: -2px;
+        right: 19px;
+        // left: -4px;
+        box-shadow: 0px 0.1px 0.3px rgba(0, 0, 0, 0.1),
+        0px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+        &:focus ~ .switch__button {
+            border-color: v.$color-switch-dark;
+        }
+        &:checked ~ .switch__button {
+            background-color: v.$color-switch-dark;
+        }
+        &:checked ~ .switch__button .switch__dot {
+            right: -4px;
+            background-color: v.$color-switch-light-fill;
+        }
+    }
+}
+
+.dark-mode .switch__light {
+    fill: v.$color-switch-light-fill-2;
+}
+
+.dark-mode .switch__dark {
+    fill: v.$color-white;
+}

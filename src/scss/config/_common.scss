@@ -13,8 +13,20 @@ html {
   background-color: v.$color-white;
 }
 
+.dark-mode {
+  background-color: v.$color-bg-black;
+}
+
+body {
+  min-height: 100vh;
+}
+
 body, input, button, textarea, select {
   font-family: v.$primary-font;
+}
+
+a, button {
+  cursor: pointer;
 }
 
 .container {
@@ -24,8 +36,5 @@ body, input, button, textarea, select {
   margin: {
     left: auto;
     right: auto;
-  }
-  @include u.media('desktop-wide') {
-    max-width: 100%;
   }
 }

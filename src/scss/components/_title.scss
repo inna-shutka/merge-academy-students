@@ -2,5 +2,15 @@
 @use '../config/variables' as v;
 
 .title {
-    font-family: 'VT323', monospace;
+    @include u.text(u.rem(24), 400, v.$color-black-main, 24px, v.$font-2);
+    @include u.media('tablet-wide') {
+        @include u.text(u.rem(50), 400, v.$color-black-main, 50px, v.$font-2);
+    }
+}
+
+.dark-mode h1 {
+    @include u.text(u.rem(24), 400, v.$color-white, 24px, v.$font-2);
+    @include u.media('tablet-wide') {
+        @include u.text(u.rem(50), 400, v.$color-white, 50px, v.$font-2);
+    }
 }
