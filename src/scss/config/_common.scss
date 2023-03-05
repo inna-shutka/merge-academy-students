@@ -7,14 +7,29 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   text-decoration: none;
+  transition-property: color, background-color, border-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 html {
   background-color: v.$color-white;
 }
 
+.dark-mode {
+  background-color: v.$color-bg-black;
+}
+
+body {
+  min-height: 100vh;
+}
+
 body, input, button, textarea, select {
   font-family: v.$primary-font;
+}
+
+a, button {
+  cursor: pointer;
 }
 
 .container {
@@ -24,8 +39,5 @@ body, input, button, textarea, select {
   margin: {
     left: auto;
     right: auto;
-  }
-  @include u.media('desktop-wide') {
-    max-width: 100%;
   }
 }

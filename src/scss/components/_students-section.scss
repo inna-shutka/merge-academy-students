@@ -1,0 +1,24 @@
+@use '../components/utils' as u;
+@use '../config/variables' as v;
+
+.students-section {
+    @include u.flex(center, center, column);
+    &__header {
+        width: 100vw;
+        height: 112px;
+        padding: 0px 16px;
+        @include u.flex(center, center);
+        border-bottom: 1px solid v.$color-light-gray;
+        margin-bottom: 56px;
+        @include u.media('tablet-wide') {
+            padding: 0px 64px;
+            margin-bottom: 64px;
+        }
+    }
+    &__header-inner {
+        width: 100%;
+        width: 1366px;
+        height: 100%;
+        @include u.flex(space-between, center);
+    }
+}

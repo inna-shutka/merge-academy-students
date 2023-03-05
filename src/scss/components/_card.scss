@@ -1,0 +1,155 @@
+@use '../components/utils' as u;
+@use '../config/variables' as v;
+
+.card {
+    width: 343px;
+    height: 80px;
+    padding: 0px 16px;
+    background: v.$color-card-bg;
+    border: 1px solid v.$color-card-border;
+    border-radius: 4px;
+    @include u.flex(space-between, center);
+    @include u.media('tablet-wide') {
+        width: 480px;
+        height: 104px;
+        padding: 0px 24px;
+    }
+    &__wrapper-name {
+        @include u.flex(flex-start, center);
+    }
+    &__icon  {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 12px;
+        @include u.media('tablet-wide') {
+            width: 56px;
+            height: 56px;
+            margin-right: 24px;
+        }
+    }
+    &__inner {
+        @include u.flex(center, flex-start, column);
+    }
+    &__name {
+        @include u.text(u.rem(14), 500, v.$color-card-text, 17px, v.$primary-font);
+        text-align: center;
+        letter-spacing: 0.02em;
+        margin-bottom: 4px;
+        @include u.media('tablet-wide') {
+            @include u.text(u.rem(16), 500, v.$color-card-text, 19px, v.$primary-font);
+        }
+    }
+    &__wrapper-email {
+        @include u.flex(flex-start, center);
+    }
+    &__img-email {
+        width: 13px;
+        height: 10px;
+        fill: v.$color-fill-email-img;
+        @include u.media('tablet-wide') {
+            width: 16px;
+            height: 13px;
+        }
+    }
+    &__email {
+        @include u.text(u.rem(12), 400, v.$color-card-email, 14px, v.$primary-font);
+        text-align: center;
+        letter-spacing: 0.02em;
+        margin-left: 3px;
+        @include u.media('tablet-wide') {
+            @include u.text(u.rem(14), 400, v.$color-card-email, 17px, v.$primary-font);
+        }
+    }
+    &__wrapper-github {
+        height: 100%;
+        @include u.flex(center, center);
+        border-left: 1px solid v.$color-card-border;
+        padding-left: 16px;
+        @include u.media('tablet-wide') {
+            padding-left: 24px;
+        }
+    }
+    &__github {
+        width: 20px;
+        height: 20px;
+        @include u.media('tablet-wide') {
+            width: 32px;
+            height: 32px;
+        }
+    }
+    &__img {
+        width: 20px;
+        height: 20px;
+        fill: v.$color-fill-img;
+        @include u.media('tablet-wide') {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
+
+.dark-mode .card {
+    width: 343px;
+    height: 80px;
+    padding: 0px 16px;
+    background: v.$color-card-bg-dark;
+    border: 1px solid v.$color-card-border-dark;
+    border-radius: 4px;
+    @include u.flex(space-between, center);
+    @include u.media('tablet-wide') {
+        width: 480px;
+        height: 104px;
+        padding: 0px 24px;
+    }
+}
+
+.dark-mode .card__name {
+    @include u.text(u.rem(14), 500, v.$color-white, 17px, v.$primary-font);
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+    @include u.media('tablet-wide') {
+        @include u.text(u.rem(16), 500, v.$color-white, 19px, v.$primary-font);
+    }
+}
+
+.dark-mode .card__img-email {
+    width: 13px;
+    height: 10px;
+    fill: v.$color-fill-email-img-dark;
+    @include u.media('tablet-wide') {
+        width: 16px;
+        height: 13px;
+    }
+}
+
+.dark-mode .card__email {
+    @include u.text(u.rem(12), 400, v.$color-card-email-dark, 14px, v.$primary-font);
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin-left: 3px;
+    @include u.media('tablet-wide') {
+        @include u.text(u.rem(14), 400, v.$color-card-email-dark, 17px, v.$primary-font);
+    }
+}
+
+.dark-mode .card__wrapper-github {
+    height: 100%;
+    @include u.flex(center, center);
+    border-left: 1px solid v.$color-card-border-dark;
+    padding-left: 16px;
+    @include u.media('tablet-wide') {
+        padding-left: 24px;
+    }
+}
+
+.dark-mode .card__img {
+    width: 20px;
+    height: 20px;
+    fill: v.$color-white;
+        @include u.media('tablet-wide') {
+            width: 32px;
+            height: 32px;
+        }
+}
